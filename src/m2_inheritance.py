@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (4 pts)
+# Done: 1. (4 pts)
 #
 #   For this module, we are going to build off our Pet class that we created in
 #   m2 of the session 16 coding exercises.
@@ -26,9 +26,24 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+class Pet:
+    def __init__ (self, name, age):
+        self.name = name
+        self.age = age
+    def __str__(self):
+        return f"{self.name}({self.age})"
+    def speak(self):
+        print(f"{self.name}:" + " " + "Baa, Baa, Baa!")
+
+
+class Dog(Pet):
+    def fetch(self):
+        print(f"{self.name} ran to get the stick!")
+    def speak(self):
+        print(f"{self.name}:" + " " + "Bark! Bark! Bark!")
 
 ###############################################################################
-# TODO: 2. (4 pts)
+# Done: 2. (4 pts)
 #
 #   Now, write your own class of whatever type of pet you wish.
 #
@@ -46,9 +61,20 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+class Goat(Pet):
+    def __init__(self, name, age, color, food_eaten):
+        self.name = name
+        self.age = age
+        self.color = color
+        self.food_eaten = food_eaten
+    def food(self):
+        print(f"{self.name} eats {self.food_eaten} all day every day.")
+    def play(self):
+        print(f"{self.name} runs around the field.")
+
 
 ###############################################################################
-# TODO: 3. (4 pts)
+# Done: 3. (4 pts)
 #
 #   Now let's use our classes!
 #
@@ -71,4 +97,13 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def main():
+    PetDog = Dog("Flower", 6)
+    print(PetDog)
+    PetDog.speak()
+    PetDog.fetch()
+    PetGoat = Goat("Spot", 8, "white", "grass")
+    print(PetGoat)
+    PetGoat.food()
+    PetGoat.play()
+main()
